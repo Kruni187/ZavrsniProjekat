@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +29,11 @@ public abstract class BasicTest {
 	
 	protected WebDriver driver;
 	protected WebDriverWait wait;
-	protected String baseUrl = "http://cms.demo.katalon.com";
+	protected JavascriptExecutor executor;
+	protected String baseUrl = "http://demo.yo-meals.com";
+	protected String email = "customer@dummyid.com";
+	protected String password = "12345678a";
+	
 	
 
 	@BeforeClass
@@ -38,6 +43,8 @@ public abstract class BasicTest {
 		
 		this.driver = new ChromeDriver();
 		this.wait = new WebDriverWait(driver, 30);
+		this.executor = (JavascriptExecutor) driver;
+		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		this.driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	}

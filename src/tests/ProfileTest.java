@@ -25,9 +25,9 @@ public class ProfileTest extends BasicTest {
 		ProfilePage pp = new ProfilePage(driver, wait, executor);
 		AuthPage ap = new AuthPage(driver,wait, executor);
 				
-		this.driver.navigate().to(this.baseUrl + "/guest-user/login-form");
-		
+		this.driver.navigate().to(this.baseUrl + "/guest-user/login-form");		
 		lpp.closePopup();
+		Thread.sleep(1000);
 		lp.logIn(email, password);
 	    Assert.assertTrue(nsp.getMessage().equals("Login Successfull"));
 	    

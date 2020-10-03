@@ -35,6 +35,7 @@ public class MealItemTest extends BasicTest {
 		lpp.setLocation("City Center - Albany");
 		mp.addToCart("15");
 		Assert.assertTrue(nsp.getMessage().equals("Meal Added To Cart"));
+		
 	 }
 	
 @Test (priority=5)
@@ -46,7 +47,7 @@ public class MealItemTest extends BasicTest {
 		MealPage mp = new MealPage(driver,wait, executor);
 				
 		this.driver.navigate().to(this.baseUrl + "/meal/soup-shrimp-salad-combo");
-		lpp.closePopup();
+		lpp.closePopup();		
 		mp.favoriteMeal();	
 		Thread.sleep(500);
 		Assert.assertTrue(nsp.getMessage().equals("Please login first!"));
@@ -56,6 +57,7 @@ public class MealItemTest extends BasicTest {
 		mp.favoriteMeal();
 		Thread.sleep(600);
 		Assert.assertTrue(nsp.getMessage().contains("Product has been added to your favorites"));
+		
 	 }
 	
 @Test (priority=10)

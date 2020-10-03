@@ -3,9 +3,8 @@
 <suite name="CMS TESTS">
     <test name="Chrome regression test">
          <classes>
-             <class name="tests.HomeTest"/>
-             <class name="tests.LoginTest"/>
-             <class name="tests.RegistrationTest"/>
+             <class name="tests.MealItemTest"/>
+             <class name="tests.ProfileTest"/>          
           </classes>
      </test> <!-- Test -->
 </suite> <!-- Suite -->

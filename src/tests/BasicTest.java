@@ -57,6 +57,8 @@ public abstract class BasicTest {
 			File save = new File ("screenshots/" + fileName);
 			FileHandler.copy(ss, save);
 		}
+		this.driver.manage().deleteAllCookies();
+		this.driver.navigate().refresh();
 	}
 	
 	@AfterClass
